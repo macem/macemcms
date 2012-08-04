@@ -1,0 +1,18 @@
+<div class="content" data-box="">
+    
+    {if="isset($config['isLogged'])"}
+        <h3 class="head"><a href="{function="url(true)"}module.select?position=" class="add button">Dodaj</a></h3>    
+    {/if}
+          
+    {loop="$data"}
+        {if="$value.position == ''"}
+            {if="isset($value.params.template)"}
+                {$template="template/".$value.params.template}
+                {include="$template"}
+            {else}
+                {include="template/default"}
+            {/if}
+        {/if}
+    {/loop}    
+
+</div>   

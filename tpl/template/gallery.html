@@ -1,0 +1,40 @@
+ {$id=$value.uniq}
+ 
+ <article id="art-{$id}" {if="$value.params.pinned=='true'"}class="pinned"{/if}>
+ 
+ {$add=$value.add_data_url}
+ 
+ <header>
+ 
+ {if="isset($config['isLogged'])"}
+   <div class="toolbar">
+    <a href="#move" class="move">Przesuń</a>
+    <a href="{$value.edit_url}" class="edit">Edytuj</a>
+    <a href="{$value.remove_url}" class="delete">Usuń</a>
+   </div>
+ {/if}
+ {if="isset($config['isLogged'])"}
+ <a href="{$add}" class="add button">Dodaj zdjęcie</a>
+ {/if}        
+ 
+ {if="$value.params.simple!='true'"}
+  {if="isset($value.title)"}
+      <h2 class="title">{$value.title}</h2>
+  {/if}
+  <span class="create">Dodany: {$value.date} przez {$value.author}</span>
+ {/if}
+ 
+ </header>
+ 
+ <div class="gallery gallery-{$value.view}">
+ {loop="$value.content"}    
+  <div class="img">
+   {if="isset($config['isLogged'])"}
+    <a href="{$value.edit_data_url}" class="delete" title="usuń zdjęcie">Usuń</a> <em class="size" title="rozmiar obrazka w kilobajtach">{$value.size}kb</em>
+   {/if}
+   <a href='{$value.href}' title='powiększ zdjęcie' class='drag zoom open' data-downloadurl='{$value.downloadurl}' draggable='true'><img src='{$value.src}' alt='thumbnail'/></a>
+  </div>	
+ {/loop}
+ </div>
+ 
+ </article>

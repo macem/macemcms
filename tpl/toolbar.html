@@ -1,0 +1,26 @@
+<div id="toolbar">
+
+{if="$config['panel'][0]['table_name'] == $config['table']"}
+	<a href="{function="url('')"}" class="current event-panel icon-conf" accesskey="P">{$config.panel.0.name}</a>
+{else}
+	<a href="{function="url('panel/'.$panel[0]['table_name'])"}" class="event-panel icon-conf" accesskey="P">{$config.panel.0.name}</a>	
+{/if}
+
+<!--{if="$config['panel'][0]['table_name'] != $config['table'] && isset($config['edit'])"}
+ 	<a href="{function="url('')"}" class="current event-edit icon-edit" accesskey="E" title="wyjdz z edycji treści strony">Edycja strony</a>
+{/if}
+{if="$config['panel'][0]['table_name'] != $config['table'] && !isset($config['edit'])"}
+	<a href="{function="url(true)"}?edit" class="event-edit icon-edit" accesskey="E" title="tryb edycji treści strony">Edycja strony</a>	
+{/if}-->
+
+<a href="#switch" class="event-panel icon-compact" accesskey="C">Compact</a>
+
+{if="isset($config['isLogged'])"}
+	<p><strong>{$config.user}</strong> (<a href="{function="url(true)"}user.logout?redirect={$config.urlencode}" accesskey="L" class="event-logout icon-logout">wyloguj</a>)</p>
+	<a href="{function="url('panel/panel/util.formhelp')"}" class="event-help icon-email" accesskey="P" title="zapytaj, poproś o pomoc">Pomoc</a>
+{/if}
+
+</div>
+
+</body>
+</html>

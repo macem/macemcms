@@ -1,0 +1,44 @@
+{include="header"}
+
+  <div class="content"> 
+
+    {if="isset($config['isLogged'])"}
+        <h3 class="head"><a href="{function="url(true)"}blog.form?item=new" class="add button">Dodaj post</a></h3>    
+    {/if}
+          
+    {loop="$data"}
+        
+        {if="$value.title!=''"}
+            <h2 class="title">{$value.title}</h2>
+        {/if}
+        
+        <span class="create">Dodany: {$value.date}</span>
+        
+        {if="isset($config['isLogged'])"}
+            <div class="toolbar">
+            <a href="{$value.edit_url}" class="edit">Edytuj</a>
+            <a href="{$value.remove_url}" class="delete">Usuń</a>
+            </div>
+        {/if}            
+        
+        {$value.content}
+        
+        {loop="$value.plugins"}
+            A{$value.name}A    
+        {/loop}
+        
+    {/loop}
+	
+	<nav class="breadcrumb">
+		{$config.breadcrumb}
+	</nav>    
+  
+  </div> <!-- content --> 
+
+{if="$config['params']['addrightsidebar'] == 'on'"}
+	{include="sidebar"}
+{/if}
+
+{include="footer" cache="3600"}
+
+{include="toolbar"}

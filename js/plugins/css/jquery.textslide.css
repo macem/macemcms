@@ -1,0 +1,175 @@
+.t-slider {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	box-shadow: 0 0 1px #ccc;
+}
+.t-pane {
+	overflow: hidden;  
+	position: relative;
+	clear: both;
+}
+.t-horizontal .t-slide,
+.t-vertical .t-slide {
+	float: left;
+	width: 100%;
+	font-size: 1em;
+}
+.t-vertical, 
+/*.t-horizontal .t-slide,*/
+.t-horizontal {
+	width: 100%; /* default */
+}
+.t-vertical {
+	min-height: 200px; /* default */
+}
+.t-horizontal .t-slide,
+.t-autosize .t-slide {
+	width: auto;
+	min-height: 200px;
+}
+.t-slider .t-container {
+	position: relative;
+	list-style: none;
+	margin: 0;
+}
+.t-horizontal .t-container {
+	width: 1000000px; /* % problem safarii */
+}
+.t-vertical .t-container {
+	height: 1000000px;
+}
+.t-slider .t-stopped, 
+.t-slider .t-play,
+.t-slider .t-previous,
+.t-slider .t-next {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	padding: 15px 20px;
+	text-decoration: none;
+	border: 0;
+	font-size: 32px;
+	font-weight: 900;
+	color: #fff;
+	background: #acacac;
+	font-family: Georgia;
+}
+.t-slider .t-previous {
+	left: 0;
+	right: auto;
+}
+/*.t-slider .t-previous:hover,
+.t-slider .t-next:hover {
+	background-color: #cae4ff;
+}
+.t-slider .t-previous {
+	left: 0;
+	background-position: 0 -26px;
+}
+.t-slider .t-next:hover {
+	background-position: -26px -52px;
+}
+.t-slider .t-previous:hover {
+	background-position: 0 -52px;
+}
+
+.t-slider .t-play:hover {
+	background-position: -104px -26px;
+}
+.t-slider .t-stop {
+	background-position: -78px 0;
+}
+.t-slider .t-stop:hover {
+	background-position: -104px 0;
+} 
+.t-vertical .t-next {
+	left: 0;
+} */
+.t-slider .t-play {
+	display: none;
+	position: static;
+	float: right;
+	margin: 1px 5px;
+
+}
+.t-slider .t-stopped {
+	display: none;
+	bottom: 45%;
+	left: 45%;
+	right: auto;
+	display: none;
+	opacity: 0.6;
+
+}
+
+/** = breadcrumb */
+.t-breadcrumb {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+.t-breadcrumb li {
+	list-style: none;
+	 display: inline-block; /* trick */
+}
+.t-breadcrumb-count,
+.t-breadcrumb a {
+	display: block; 
+	float: left; 
+	width: 15px;
+	height: 15px;
+	text-indent: -999em;
+	overflow: hodden;
+	margin-left: 2px;
+	border: 0 !important;
+	background: url(img/sprites.png) repeat-x 0 -56px;
+}
+.t-breadcrumb .t-active a {
+	background-position: -15px -56px;
+}
+.t-breadcrumb a.current,
+.t-breadcrumb a:hover {
+	background-position: -15px -56px;
+}
+.t-breadcrumb-count {
+	color: #fff;
+	float: right;
+	width: 52px;
+	display: none;
+	background-position: 0 -79px;	
+}
+.t-breadcrumb-right,
+.t-breadcrumb-left {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 35px;
+	height: 35px;
+	z-index: 1;
+	text-indent: 9999em;
+	border: solid 1px #c9c9c9;	
+	border-width: 0 1px 1px 0;	
+	overflow: hidden;  
+	background: #fff url(img/sprites.png) no-repeat 0 -35px;
+}
+.t-breadcrumb-right {
+	left: auto;
+	right: 0;
+	border-width: 0 0 1px 1px;		
+	background-position: 100% -35px;
+}
+.t-breadcrumb-right:hover,
+.t-breadcrumb-left:hover {
+	background-color: #cae4ff;
+}
+.t-breadcrumb-collapse a {
+	padding: 8px 2px;
+	text-indent: -9999em;
+	overflow: hidden;
+}

@@ -1,0 +1,24 @@
+        <article id="art-{$value.uniq}" {if="$value.params.pinned=='true'"}class="pinned"{/if}>
+
+        <header>
+         
+        {if="isset($config['isLogged'])"}
+            <div class="toolbar">
+            <a href="#move" class="move">Przesuń</a>
+            <a href="{$value.edit_url}" class="edit">Edytuj</a>
+            <a href="{$value.remove_url}" class="delete">Usuń</a>
+            </div>
+        {/if}
+        
+        {if="$value.params.simple!='true'"}
+            {if="isset($value.title)"}
+	 <h2 class="title">{$value.title}</h2>
+            {/if}        
+            
+            <span class="create">Dodany: {$value.date} przez {$value.author}</span>
+        {/if}
+        </header>
+            
+        {$value.content}
+        
+        </article>

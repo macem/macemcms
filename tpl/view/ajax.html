@@ -1,0 +1,9 @@
+
+{if="isset($config['info'])"}
+	<p class="info">{$config.info}<a href="#close" class="hide" title="zamknij">[OK]</a></p>
+{/if}
+{if="isset($config['error'])"}
+	<p class="info error">{$config.error}<a href="#close" class="hide" title="zamknij">[OK]</a></p>
+{/if}
+
+{$data}

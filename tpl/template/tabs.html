@@ -1,0 +1,51 @@
+        {$id=$value.uniq}
+        
+        <article id="art-{$id}" {if="$value.params.pinned=='true'"}class="pinned"{/if}>
+
+        {$add=$value.add_data_url}
+        {$edit=$value.edit_data_url}
+        {$remove=$value.remove_data_url}
+        
+        <header>
+        
+        {if="isset($config['isLogged'])"}
+            <div class="toolbar">
+             <a href="#move" class="move">Przesuń</a>
+             <a href="{$value.edit_url}" class="edit">Edytuj</a>
+             <a href="{$value.remove_url}" class="delete">Usuń</a>
+            </div>
+        {/if}
+
+        {if="isset($config['isLogged'])"}
+        <a href="{$add}" class="add button">Dodaj tab</a>
+        {/if}
+        
+        {if="$value.params.simple!='true'"}
+            {if="isset($value.title)"}
+	 <h2 class="title">{$value.title}</h2>
+            {/if}
+            <span class="create">Dodany: {$value.date} przez {$value.author}</span>
+        {/if}
+        
+        </header>
+
+        <ul class="tab-control">
+        {loop="$value.content"} 
+            <li{if="$value.checkbox.value==true"} class="tab-show"{/if}><a title="" href="#tab-{$id}-{$key}">{$value.title.value}</a></li>
+        {/loop}
+        </ul>
+
+        {loop="$value.content"}    
+            <div id="tab-{$id}-{$key}" class="tab-pane{if="$value.checkbox.value==true"} tab-show{/if}">
+	         {if="isset($config['isLogged'])"}
+	         <div class="toolbar toolbar-data">
+	          <a href="{$edit}{$key}" class="edit">Edytuj</a>
+	          <a href="{$remove}{$key}" class="delete">Usuń</a>
+	         </div>
+	         {/if}
+	         
+	         {$value.content.value}
+            </div>	
+        {/loop}
+        
+        </article>

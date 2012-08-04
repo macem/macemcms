@@ -1,0 +1,86 @@
+#upload-box {
+    background: #D5E9EE url(../images/drop.gif) no-repeat 50% 75%;
+    border: 3px dashed #9BC5D2;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    height: 180px;
+    font-size: 22px;
+    text-shadow: 0 1px 1px #fff;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: 0;
+    position: relative;
+    text-align: center;
+} 
+#upload-box a {
+	font-size: 22px;	
+}
+#upload-box strong {
+	color: #444;
+}
+#upload-box:hover {
+	opacity: 0.8;
+	color: #6C8ECF;
+	border-color: #6C8ECF;
+}
+
+#upload-list {
+	list-style: none;
+	margin: 0;
+}
+#upload-list li {
+	margin: 4px 0;
+	padding: 4px 0;
+	font-size: 1.1em;
+	border: solid 1px #fff;
+	border-width: 1px 0;
+}
+#upload-list li.load em {	
+	padding-right: 20px;
+	background: url(../images/lightbox-ico-loading.gif) no-repeat 100% 50%;
+}
+#upload-list li.aborted * {
+	color: #f00;
+}
+#upload-list li.warning {
+	background-color: #fffed4;
+}
+#upload-list li:hover {
+	border-color: #ddd;
+}
+/*#upload-list .preview img {
+    border: 2px solid #fff;
+    height: 56px;
+    margin-right: 20px;
+    vertical-align: middle;
+    width: 56px;
+}*/
+#upload-list em {
+	color: #888;
+	font-style: normal;
+	margin: 0 10px;
+	display: inline-block;
+	width: 11%;
+}
+/*#upload-list span {
+    width: 133px;
+    padding: 0 2px 0 0;
+    margin: 0 5px 0 0;
+    border-radius: 4px;
+    display: inline-block;
+    border: 1px solid #9BC5D2;   
+}*/
+#upload-list strong {
+    display: inline-block;
+    width: 57%;
+}
+#upload-list span strong {
+	background: #D5E9EE;
+	margin: 1px;
+	padding: 0;
+	width: auto;
+	display: block;
+	font-size: 10px;
+	text-align: center;
+}
+

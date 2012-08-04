@@ -1,0 +1,42 @@
+/** =search in result */
+
+#container {
+	border-left: 0;
+}
+#content {
+    margin: 0;
+    width: 100%;
+}
+
+#leftpane {
+	width: 30%;
+	float: left;
+	margin: 0 -4px 0 0;
+	border: solid 1px #ddd;
+	min-height: 400px;
+}
+#middlepane {
+	width: 70%;
+	float: left;
+	border: solid 1px #ddd;
+	min-height: 400px;
+}
+#middlepane ul,
+#leftpane ul {
+	list-style: none;
+	margin: 0;
+}
+#middlepane li,
+#leftpane li {
+	padding: 4px 4px 4px 15px;
+}
+/*#middlepane li:hover,
+#leftpane li:hover {
+	background-color: #f8f8f8;
+}*/
+#middlepane li .collapse,
+#leftpane li .collapse {
+	padding: 4px;
+	border: dotted 1px #ddd;
+}
+
